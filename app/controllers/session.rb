@@ -18,7 +18,8 @@ post '/session' do
   end
 end
 
-delete '/session' do
+
+get '/session' do
   session[:user_id] = nil
   redirect '/signin'
 end
