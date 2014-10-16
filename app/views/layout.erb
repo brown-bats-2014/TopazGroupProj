@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,23 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Gorilla Survey</title>
 </head>
 <body>
+  <h1>Welcome To Gorilla Survey</h1>
+  <nav>
+    <ul>
+      <li></li>
+      <li>
+        <a href="surveys/new"><button>New Survey</button></a>
+      </li>
+      <li>
+        <form id="log_out" method="POST" action="/logout">
+        <input type="submit" value="Logout">
+        </form>
+      </li>
+    </ul>
+  </nav>
   <%= yield %>
 </body>
 </html>
