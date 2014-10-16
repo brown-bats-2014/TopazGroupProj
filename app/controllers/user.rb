@@ -1,4 +1,4 @@
-post '/user/new' do
+post '/users/new' do
   if params[:password] == params[:verify_password]
     user = User.create(email: params[:email], password: params[:password])
     if user.id.nil?
