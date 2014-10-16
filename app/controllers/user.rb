@@ -10,5 +10,6 @@ post '/users/new' do
     end
   else
     flash[:notice] ="Your passwords do not match"
+    redirect '/signup'
   end
 end
