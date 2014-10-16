@@ -18,20 +18,23 @@
   <title>Gorilla Survey</title>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li></li>
-      <li>
-        <a href="surveys/new"><button>New Survey</button></a>
-      </li>
-      <li>
-        <form id="log_out" method="POST" action="/logout">
-        <input type="submit" value="Logout">
-        </form>
-      </li>
-    </ul>
-  </nav>
+  <header>
   <h1>Welcome To Gorilla Survey</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="surveys/new"><button>New Survey</button></a>
+        </li>
+        <% if current_user.nil? %>
+
+        <li><a href="/signin">Sign In</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+        <% else %>
+        <li><a href="/session" >Logout</a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
   <%= yield %>
 </body>
 </html>
