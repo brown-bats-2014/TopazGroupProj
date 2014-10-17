@@ -18,7 +18,7 @@ require 'logger'
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'rack-flash'
-
+require 'faker'
 require 'erb'
 
 # Some helper constants for path-centric logic
