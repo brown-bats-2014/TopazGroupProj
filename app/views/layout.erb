@@ -25,7 +25,7 @@
     <nav>
       <ul>
         <li>
-          <a href="surveys/new"><button>New Survey</button></a>
+          <a href="/survey/new"><button>New Survey</button></a>
         </li>
         <% if current_user.nil? %>
 
@@ -37,6 +37,7 @@
       </ul>
     </nav>
   </header>
+  <div class="flash"><%= flash[:notice] %></div>
   <%= yield %>
 </body>
 </html>

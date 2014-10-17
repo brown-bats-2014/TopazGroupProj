@@ -1,24 +1,26 @@
 get '/survey/new' do
-  @survey = session[:last_entry] if session[:last_entry]
-  sesion[:last_entry] = nil
-  erb :_newsurvey
+  @survey = Survey.new
+  erb :survey_form
 end
 
 post '/survey/new' do
-  @survey = Survey.create(id: params[:id], name: params[:name], description: params[:description])
-  if @survey.save
-    redirect ('survey/new/:id')
+  redirect_to_login
+  puts params
+  @survey = current_user.surveys.create(params)
+  unless @survey.id.nil?
+    redirect ("/survey/#{@survey.id}")
   else
     flash[:notice] = "Did not enter valid survey information"
-    redirect ('survey/new')
+    redirect ('/survey/new')
   end
 end
 
-get '/survey/new/:id' do
-  erb :_create_survey
+get '/survey/edit/:id' do
+  @survey = Survey.find(params[:id])
+  erb :survey_form
 end
 
-post '/survey/new/:id' do
+get '/survey/:id' do
   @survey = Survey.find(params[:id])
-
+  erb :survey
 end

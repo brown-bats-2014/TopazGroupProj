@@ -1,7 +1,0 @@
-<form action="/survey/new" method="POST">
-  <label>NAME</label>
-    <input type="text" name="survey[name]" placeholder="Name of Survey..." value ="<%= @survey.name if @survey %>" required>
-  <label>DESCRIPTION</label>
-    <input type="text" name="survey[description]" placeholder="Tell us a little about your survey..." value = "<%= @survey.description if @survey %>" required>
-    <input type="submit" value="CREATE SURVEY">
-</form>
