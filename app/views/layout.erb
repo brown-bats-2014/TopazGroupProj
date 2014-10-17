@@ -15,14 +15,14 @@
   <title>Gorilla Survey</title>
 </head>
 <body>
-
+  <div id="modal" class="hiddenModal"></div>
   <header>
   <h1>Welcome To Gorilla Survey</h1>
 
     <nav>
       <ul>
         <li>
-          <a href="/survey/new"><button>New Survey</button></a>
+          <a id="new_survey" href="/survey/new"><button>New Survey</button></a>
         </li>
         <% if current_user.nil? %>
 
@@ -40,6 +40,8 @@
   <script src="/js/model/question.js"></script>
   <script src="/js/view/question.js"></script>
   <script src="/js/controller/question.js"></script>
+  <script src="/js/controller/modal.js"></script>
+  <script src="/js/view/modal.js"></script>
   <script src="/js/application.js"></script>
 </body>
 </html>
