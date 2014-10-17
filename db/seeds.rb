@@ -27,9 +27,9 @@ module Seed
     end
 
     # Chosen Answers
-    # 5.times do
-    #   User.all.each { |user| user.answers.create() } <<
-    # end
+    1250.times do
+      Answer.create(user_id: rand(10), survey_id: rand(50), question_id: rand(250), choice_id: rand(1250))
+    end
   end
 end
 
