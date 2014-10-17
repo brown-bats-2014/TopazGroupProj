@@ -13,16 +13,18 @@ QuestionController.prototype.initialize = function() {
 };
 
 QuestionController.prototype.attachEvents = function() {
-    var controller = this;
+    var that = this;
 
     console.log("attaching events");
 
     $("form").on('click', '#choice_add', function(e) {
-      console.log(this.view);
-      this.view.render(this.model.qNumber);
-      this.model.qInc();
+      console.log(that.view);
+      that.view.render(that.model.qNumber);
+      that.model.qInc();
     });
 
+
+    // this is not functional for our code will need to be heavily modified
     this.view.$container.on('submit', '#question_form', function(evt) {
         var usernameText = $(this).find('#user-name-input').val();
 
