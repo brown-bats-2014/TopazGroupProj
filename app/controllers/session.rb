@@ -23,3 +23,7 @@ get '/session' do
   session[:user_id] = nil
   redirect '/signin'
 end
+
+get '/survey/new' do
+  erb :_s
+end
