@@ -1,6 +1,6 @@
 get '/survey/new' do
   @survey = Survey.new
-  erb :survey_form
+  erb :survey_form, layout: false
 end
 
 post '/survey/new' do

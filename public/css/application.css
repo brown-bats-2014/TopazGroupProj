@@ -1,0 +1,21 @@
+.hiddenModal {
+  display: none;
+}
+
+.activeModal {
+  position: fixed;
+  top: 100px;
+  padding: 50px;
+  background-color: #ddf;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: solid 2px black;
+}
+
+form input {
+  margin: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
