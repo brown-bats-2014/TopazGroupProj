@@ -5,5 +5,6 @@ class CreateSurveys < ActiveRecord::Migration
       table.references :user
 
       table.timestamps
+    end
   end
 end
