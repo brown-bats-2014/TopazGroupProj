@@ -1,0 +1,9 @@
+
+<form action="/question/<%= @choice.question %>/choices" method="post">
+  <% unless @choice.id.nil? %>
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="id" value="<%= @choice.id %>">
+  <% end %>
+  <input type="text" name="content" placeholder="Choice for question" value="<%= @choice.content %>">
+  <input type="submit">
+</form>
