@@ -28,7 +28,7 @@ module Seed
 
     # Chosen Answers
     1250.times do
-      Answer.create(user_id: rand(10), survey_id: rand(50), question_id: rand(250), choice_id: rand(1250))
+      Answer.create(user_id: User.all.sample.id, question_id: Question.all.sample.id, choice_id: Choice.all.sample.id)
     end
   end
 end
