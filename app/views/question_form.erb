@@ -4,5 +4,11 @@
     <input type="hidden" name="id" value="@question.id">
   <% end %>
   <input type="text" name="content" placeholder="Put your question here" value="<%= @question.content %>">
+  <div class="choices">
+  <% @question.choices.each_with_index do |choice, i| %>
+    <input type="text" name="choice<%= i %>" placeholder="Choice" value="<%= choice.content %>">
+  <% end %>
+  </div>
+  <a href="#" id="choice_add">Add Choices</a>
   <input type="submit">
 </form>
