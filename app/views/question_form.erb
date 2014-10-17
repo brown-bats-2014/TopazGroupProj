@@ -1,0 +1,8 @@
+<form action="/survey/<%= @question.survey.id %>/questions" method="post">
+  <% unless @question.id.nil? %>
+    <input type="hidden" name="_method" value="put">
+    <input type="hidden" name="id" value="@question.id">
+  <% end %>
+  <input type="text" name="content" placeholder="Put your question here" value="<%= @question.content %>">
+  <input type="submit">
+</form>

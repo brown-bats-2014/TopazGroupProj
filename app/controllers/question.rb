@@ -1,4 +1,4 @@
-get '/survey/:id/question_new' do
+get '/survey/:id/questions/new' do
   redirect_to_login
   survey = Survey.find(params[:id])
   check_ownership(survey)
@@ -14,16 +14,16 @@ get '/survey/:sid/question_edit/:qid' do
 end
 
 
-get '/survey/:sid/question/:qid' do
+get '/survey/:sid/questions/:qid' do
   redirect_to_login
   erb :question, layout: false
 end
 
-post '/survey/:id/question' do
+post '/survey/:id/questions' do
   redirect_to_login
   survey = Survey.find(params[:id])
   check_ownership survey
-  q = survey.questions.create(params)
+  q = survey.questions.create(content: params[:content])
   if q.id.nil?
     redirect "/survey/#{params[:id]}" unless request.xhr?
     status 422
@@ -33,7 +33,7 @@ post '/survey/:id/question' do
   end
 end
 
-put '/survey/:sid/question/:qid' do
+put '/survey/:sid/questions/:qid' do
   redirect_to_login
   q = Question.find(params[:qid])
   if q.nil?
@@ -50,7 +50,7 @@ put '/survey/:sid/question/:qid' do
   end
 end
 
-delete '/survey/:sid/question/:qid' do
+delete '/survey/:sid/questions/:qid' do
   redirect_to_login
   q = Question.find(params[:qid])
   check_ownership
