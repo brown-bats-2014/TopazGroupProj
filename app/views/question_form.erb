@@ -12,3 +12,7 @@
   <a href="#" id="choice_add">Add Choices</a>
   <input type="submit">
 </form>
+<script>
+  var qcon = new QuestionController({model: Question, view: QuestionView, container: ".choices"});
+  qcon.attachEvents();
+</script>

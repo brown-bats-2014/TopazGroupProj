@@ -3,7 +3,7 @@ get '/survey/:id/questions/new' do
   survey = Survey.find(params[:id])
   check_ownership(survey)
   @question = survey.questions.new
-  erb :question_form
+  erb :question_form, layout: false
 end
 
 get '/survey/:sid/question_edit/:qid' do
