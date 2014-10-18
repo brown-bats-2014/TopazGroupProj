@@ -11,7 +11,12 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/model/question.js"></script>
+  <script src="/js/view/question.js"></script>
+  <script src="/js/controller/question.js"></script>
+  <script src="/js/controller/modal.js"></script>
+  <script src="/js/view/modal.js"></script>
   <title>Gorilla Survey</title>
 </head>
 <body>
@@ -36,12 +41,7 @@
   </header>
   <div class="flash"><%= flash[:notice] %></div>
   <%= yield %>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/model/question.js"></script>
-  <script src="/js/view/question.js"></script>
-  <script src="/js/controller/question.js"></script>
-  <script src="/js/controller/modal.js"></script>
-  <script src="/js/view/modal.js"></script>
+
   <script src="/js/application.js"></script>
 </body>
 </html>
