@@ -24,11 +24,15 @@ post '/survey/:id/questions' do
   survey = Survey.find(params[:id])
   check_ownership survey
   q = survey.questions.create(content: params[:content])
+  answers = params.select { |k,v| k =~ /choice/i}
   if q.id.nil?
     redirect "/survey/#{params[:id]}" unless request.xhr?
     status 422
 
   else
+    answers.each do |k,v|
+      q.choices.create(content: v)
+    end
     redirect "/survey/#{params[:id]}" unless request.xhr?
   end
 end
